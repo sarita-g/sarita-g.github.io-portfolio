@@ -1,19 +1,20 @@
 :root {
-    --bg-page: #060913; /* Pitch dark navy */
-    --text-main: #e2e8f0;
-    --text-muted: #8b9bb4;
-    --primary: #ffffff;      
-    --accent-1: #00f0ff; /* Neon Cyan */
-    --accent-2: #0070f3; /* Tech Blue */
-    --accent-3: #10b981; /* Medical Emerald */
-    --card-bg: rgba(16, 23, 42, 0.6);
-    --border: rgba(255, 255, 255, 0.08);
-    --card-border: rgba(0, 240, 255, 0.2);
-    --glow: 0 0 20px rgba(0, 240, 255, 0.15);
-    --glow-hover: 0 0 30px rgba(0, 240, 255, 0.4);
+    --bg-page: #f8fafc; /* Soft off-white */
+    --bg-card: #ffffff;
+    --text-main: #334155; /* Slate 700 */
+    --text-muted: #64748b; /* Slate 500 */
+    --primary: #0f172a; /* Slate 900 */
+    --accent-1: #2563eb; /* Corporate Blue */
+    --accent-2: #0891b2; /* Professional Teal */
+    --accent-3: #10b981; /* Success Green */
+    --border: #e2e8f0; /* Slate 200 */
+    --card-border: rgba(37, 99, 235, 0.1);
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     
-    --radius-md: 16px;
-    --radius-lg: 24px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
 }
 
 * {
@@ -28,11 +29,10 @@ body {
     color: var(--text-main);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    /* Beautiful subtle background glowing orbs */
+    /* Subtle professional background pattern */
     background-image: 
-        radial-gradient(circle at 0% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
-    background-size: 100vw 100vh, 100vw 100vh;
+        radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
     background-attachment: fixed;
 }
 
@@ -44,10 +44,10 @@ h1, h2, h3, h4, h5, h6 {
 .italic-serif {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    background: linear-gradient(135deg, var(--accent-1), var(--primary));
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    font-weight: 600;
 }
 
 .site-wrapper {
@@ -57,9 +57,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header */
 .header {
-    background: rgba(6, 9, 19, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
@@ -82,18 +82,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-mark {
-    width: 42px;
-    height: 42px;
-    background: transparent;
-    color: var(--accent-1);
-    border: 2px solid var(--accent-1);
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), inset 0 0 10px rgba(0, 240, 255, 0.2);
+    width: 40px;
+    height: 40px;
+    background: var(--accent-1);
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    font-size: 1.2rem;
-    border-radius: 12px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
 .logo-text {
@@ -104,25 +103,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-    background: transparent;
-    color: var(--accent-1);
-    border: 1px solid var(--accent-1);
-    padding: 0.8rem 1.8rem;
+    background: var(--accent-1);
+    color: #ffffff;
+    padding: 0.75rem 1.75rem;
     border-radius: 100px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
-    box-shadow: var(--glow);
+    font-size: 0.9rem;
     transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
 }
 
 .btn-primary:hover {
-    background: var(--accent-1);
-    color: #000;
-    box-shadow: var(--glow-hover);
+    background: #1d4ed8; /* Darker blue */
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
 }
 
 /* Hero Section */
@@ -143,17 +139,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .badge {
     display: inline-block;
-    padding: 0.5rem 1.25rem;
-    background: rgba(0, 240, 255, 0.05);
+    padding: 0.5rem 1rem;
+    background: rgba(37, 99, 235, 0.08);
     color: var(--accent-1);
     border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     margin-bottom: 2rem;
-    border: 1px solid var(--card-border);
-    box-shadow: var(--glow);
+    border: 1px solid rgba(37, 99, 235, 0.1);
 }
 
 .hero-title {
@@ -186,24 +181,23 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.6rem;
     font-weight: 600;
     color: var(--text-main);
-    font-size: 0.95rem;
-    padding: 0.8rem 1.5rem;
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+    background: var(--bg-card);
     border-radius: 100px;
     border: 1px solid var(--border);
     transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .contact-item i {
     color: var(--accent-1);
-    text-shadow: 0 0 10px var(--accent-1);
 }
 
 .contact-item.link:hover {
     border-color: var(--accent-1);
-    color: var(--primary);
-    box-shadow: var(--glow);
+    color: var(--accent-1);
+    box-shadow: var(--shadow);
     transform: translateY(-2px);
 }
 
@@ -260,19 +254,18 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 2rem;
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: var(--bg-card);
     border-radius: var(--radius-lg);
     padding: 2.5rem;
     border: 1px solid var(--border);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .exp-row:hover {
-    border-color: var(--card-border);
-    box-shadow: var(--glow);
-    transform: translateY(-3px) scale(1.01);
+    border-color: var(--accent-1);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
 }
 
 .exp-meta {
@@ -282,14 +275,13 @@ h1, h2, h3, h4, h5, h6 {
 .exp-date {
     display: inline-block;
     padding: 0.4rem 1rem;
-    background: transparent;
+    background: rgba(37, 99, 235, 0.05);
     color: var(--accent-1);
     border-radius: 100px;
-    border: 1px solid var(--accent-1);
-    font-size: 0.85rem;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    font-size: 0.8rem;
     font-weight: 700;
     margin-bottom: 1.25rem;
-    box-shadow: inset 0 0 10px rgba(0,240,255,0.1);
 }
 
 .company-name {
@@ -332,10 +324,9 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 900;
     position: absolute;
     left: 0;
-    color: var(--accent-3);
+    color: var(--accent-1);
     font-size: 1rem;
     top: 2px;
-    text-shadow: 0 0 10px var(--accent-3);
 }
 
 /* Bento Grid */
@@ -346,28 +337,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bento-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    padding: 3rem;
+    background: var(--bg-card);
+    padding: 2.5rem;
     border-radius: var(--radius-lg);
     border: 1px solid var(--border);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
 
 .bento-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 2px;
-    background: linear-gradient(90deg, var(--accent-1), var(--accent-3));
+    top: 0; left: 0; width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .bento-card:hover {
-    box-shadow: var(--glow);
-    border-color: var(--card-border);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border);
     transform: translateY(-5px);
 }
 
@@ -381,10 +372,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bento-icon {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--accent-1);
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 15px var(--accent-1);
+    margin-bottom: 1.25rem;
 }
 
 .bento-card h3 {
@@ -408,20 +398,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tags-modern span {
-    padding: 0.6rem 1.25rem;
-    background: rgba(16, 185, 129, 0.05);
-    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 0.5rem 1rem;
+    background: #f1f5f9;
+    border: 1px solid var(--border);
     border-radius: 100px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--accent-3);
-    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: all 0.2s ease;
 }
 
 .tags-modern span:hover {
-    background: rgba(16, 185, 129, 0.2);
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
-    transform: translateY(-2px);
+    background: var(--accent-1);
+    color: #ffffff;
+    border-color: var(--accent-1);
+    transform: translateY(-1px);
 }
 
 /* Credentials */
@@ -460,13 +451,13 @@ h1, h2, h3, h4, h5, h6 {
 .cred-card {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    padding: 1.5rem;
+    gap: 1.25rem;
+    background: var(--bg-card);
+    padding: 1.25rem;
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
     transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .link-card {
@@ -478,21 +469,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .link-card:hover {
     border-color: var(--accent-1);
-    box-shadow: var(--glow);
-    transform: translateX(5px);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
 }
 
 .cred-logo-wrapper {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     flex-shrink: 0;
-    background: white; /* Keep white so brand logos are visible */
+    background: #f8fafc;
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 8px;
 }
 
 .cred-logo-wrapper img {
@@ -543,28 +534,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .lang-item {
-    background: var(--card-bg);
-    backdrop-filter: blur(12px);
-    padding: 1.25rem;
+    background: var(--bg-card);
+    padding: 1rem;
     text-align: center;
-    font-weight: 700;
-    color: var(--primary);
+    font-weight: 600;
+    color: var(--text-main);
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
-    font-size: 1.05rem;
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .lang-item:hover {
     border-color: var(--accent-1);
-    box-shadow: var(--glow);
+    background: #f8fafc;
     color: var(--accent-1);
 }
 
 /* Footer */
 .footer {
     padding: 3rem 2rem;
-    background: rgba(6, 9, 19, 0.9);
+    background: #ffffff;
     border-top: 1px solid var(--border);
 }
 
