@@ -28,15 +28,12 @@ body {
     color: var(--text-main);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    /* Beautiful subtle background glowing orbs and diagonal geometric beams */
+    /* Beautiful subtle background glowing orbs and dotted matrix */
     background-image: 
-        linear-gradient(135deg, transparent 48%, rgba(0, 240, 255, 0.05) 49%, rgba(0, 240, 255, 0.08) 50%, rgba(0, 240, 255, 0.05) 51%, transparent 52%),
-        linear-gradient(45deg, transparent 48%, rgba(16, 185, 129, 0.03) 49%, rgba(16, 185, 129, 0.06) 50%, rgba(16, 185, 129, 0.03) 51%, transparent 52%),
         radial-gradient(circle at 0% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
         radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 100vw 100vh, 100vw 100vh, 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+        radial-gradient(rgba(255, 255, 255, 0.03) 1.5px, transparent 1.5px);
+    background-size: 100vw 100vh, 100vw 100vh, 30px 30px;
     background-attachment: fixed;
 }
 
@@ -146,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     width: 700px;
     height: 700px;
-    border: 1px solid rgba(0, 240, 255, 0.1);
+    border: 2px dotted rgba(0, 240, 255, 0.04);
     pointer-events: none;
     z-index: 1;
     box-shadow: 0 0 60px rgba(0, 240, 255, 0.05), inset 0 0 60px rgba(16, 185, 129, 0.05);
@@ -160,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 50%;
     width: 450px;
     height: 450px;
-    border: 1px dashed rgba(16, 185, 129, 0.2);
+    border: 2px dotted rgba(16, 185, 129, 0.04);
     pointer-events: none;
     z-index: 1;
     animation: geo-spin-reverse 35s linear infinite;
