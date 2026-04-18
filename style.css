@@ -28,12 +28,11 @@ body {
     color: var(--text-main);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    /* Beautiful subtle background glowing orbs and dotted matrix */
+    /* Beautiful subtle background glowing orbs */
     background-image: 
         radial-gradient(circle at 0% 0%, rgba(0, 240, 255, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
-        radial-gradient(rgba(255, 255, 255, 0.03) 1.5px, transparent 1.5px);
-    background-size: 100vw 100vh, 100vw 100vh, 30px 30px;
+        radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 40%);
+    background-size: 100vw 100vh, 100vw 100vh;
     background-attachment: fixed;
 }
 
@@ -137,41 +136,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Floating Geometric Shapes in Hero */
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 700px;
-    height: 700px;
-    border: 2px dotted rgba(0, 240, 255, 0.04);
-    pointer-events: none;
-    z-index: 1;
-    box-shadow: 0 0 60px rgba(0, 240, 255, 0.05), inset 0 0 60px rgba(16, 185, 129, 0.05);
-    animation: geo-spin 45s linear infinite;
-}
 
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 450px;
-    height: 450px;
-    border: 2px dotted rgba(16, 185, 129, 0.04);
-    pointer-events: none;
-    z-index: 1;
-    animation: geo-spin-reverse 35s linear infinite;
-}
-
-@keyframes geo-spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes geo-spin-reverse {
-    0% { transform: translate(-50%, -50%) rotate(360deg); }
-    100% { transform: translate(-50%, -50%) rotate(0deg); }
-}
 
 .hero-inner {
     max-width: 900px;
@@ -675,17 +640,6 @@ h1, h2, h3, h4, h5, h6 {
         padding: 2.5rem 1rem 2rem;
     }
 
-    .hero::before {
-        opacity: 0.15;
-        width: 350px;
-        height: 350px;
-    }
-
-    .hero::after {
-        opacity: 0.15;
-        width: 250px;
-        height: 250px;
-    }
 
     .section {
         padding: 3rem 1rem;
